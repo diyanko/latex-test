@@ -1,0 +1,248 @@
+% ============================================================================
+% BYLAWS DOCUMENT - Main editable file
+% ============================================================================
+% To edit: Update \Article and \Sec sections with your content
+% To rebrand: Modify the "Branding / quick tweaks" section (lines 16-23)
+% To change colors: Edit the \definecolor lines (hex color codes)
+% ============================================================================
+
+\documentclass[11pt]{article}
+
+% Layout & typography
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{lmodern}
+
+% Colors, links, headings, header/footer
+\usepackage[dvipsnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+
+% ---------- Branding / quick tweaks ----------
+% EDIT: Update these values for your organization
+\newcommand{\depname}{ECSE}
+\newcommand{\orgname}{ECSE Graduate Council}
+\newcommand{\orgshort}{ECSE GC}
+\newcommand{\doctitle}{\orgname\ Bylaws}
+\newcommand{\docversion}{Version 1.0}
+\definecolor{Heading}{HTML}{D6001C}  % RPI red
+\definecolor{Rule}{HTML}{B22222}
+
+% ---------- Fancy header / footer ----------
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textsc{\orgname}}
+\rhead{\textsc{Bylaws}}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{%
+  \color{Rule}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrulewidth}{0pt}
+
+% ---------- Elegant section headings ----------
+% Section (Articles)
+\titleformat{\section}
+  {\Large\bfseries\color{Heading}}
+  {}{0pt}{\MakeUppercase}
+
+% Subsection (Sections within Articles)
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{Heading}}
+  {}{0pt}{\scshape}
+
+
+% Reduce spacing before/after headings a touch
+\titlespacing*\section{0pt}{1.0em}{0.75em}
+\titlespacing*\subsection{0pt}{0.8em}{0.6em}
+
+% ---------- Utility macros ----------
+\newcommand{\Article}[2]{\section*{Article #1. #2}}
+\newcommand{\Sec}[1]{\subsection*{Section {#1}}}
+\newcommand{\titlerulecustom}{%
+  {\color{Rule}\rule{\textwidth}{1.2pt}}%
+}
+
+\begin{document}
+
+% ---------- Title block ----------
+\begin{center}
+  {\huge\bfseries\color{Heading}\doctitle\par}
+  \vspace{0.5em}
+  {\normalsize Effective: November 19, 2025 \par}
+  \vspace{-0.2em}
+  \titlerulecustom
+\end{center}
+
+% ---------- Body ----------
+% Structure: \Article{ROMAN}{Title} for sections, \Sec{number. Title} for subsections
+% List items use enumerate environment with [label=\alph*)] for a), b), c)
+\Article{I}{Name}
+The name of this organization shall be the \textbf{\orgname} (hereafter, the \textbf{\orgshort}).
+
+\Article{II}{Purpose}
+The \orgshort{} exists to improve the graduate student experience within the Department of Electrical, Computer, and Systems Engineering (ECSE) of the Rensselaer Polytechnic Institute (RPI) by (i) building community among graduate students, (ii) advocating for graduate student needs to departmental and Institute leadership, (iii) organizing social, professional, and wellness programming, and (iv) supporting initiatives that enhance the academic environment, professional development, and quality of life for \depname{} graduate students.
+
+\Article{III}{Membership}
+
+\Sec{1. Equal Opportunity and Hazing}
+\begin{enumerate}[label=\alph*)]
+    \item It is the policy of the \orgshort{} to provide, to the maximum extent feasible, equal opportunity to all qualified individuals without regard to race, ethnicity, color, religion, national origin, gender, sexual orientation, or disability for all aspects of the \orgshort{}'s activities.
+    \item The \orgshort{} shall make reasonable efforts to ensure Masters', Co-Term and PhD students of the department are adequately represented.
+    \item Hazing, reckless or intentional endangerment to health, or forced consumption of alcohol or other drugs for the purpose of initiation into or continuing membership of the \orgshort{} is strictly prohibited.
+\end{enumerate}
+
+\Sec{2. Definition of Membership}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{General Members} consist of all registered Rensselaer Polytechnic Institute (RPI) students who are currently enrolled in graduate programs offered by the \depname{} Department. General Membership is automatic upon enrollment.
+    \item \textbf{Council Members} are General Members who have been elected to hold an office. They serve as the primary voting body for day-to-day \orgshort{} operations subject to a minimum of four (4) and a maximum of eight (8) members.
+    \item \textbf{Associate Members} (non-voting) may include but not limited to \depname{} faculty/staff, and \depname{} alumni interested in supporting \orgshort{} activities.
+\end{enumerate}
+
+\Sec{3. Obtaining Membership}
+\begin{enumerate}[label=\alph*)]
+    \item To obtain Council Membership, a General Member must be nominated by any active graduate student in the \depname{} department and elected during the elections outlined in Article IV.
+    \item Associate Membership may be granted through approval by the \orgshort{} upon receipt of written request indicating such intent.
+\end{enumerate}
+
+\Sec{4. Continued Membership}
+Every Council Member elected during elections shall hold office for one (1) year or until the next election cycle is completed.
+
+\Sec{5. Voting Rights}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{General Members:} Have the right to cast exactly one (1) vote in the election of Council Members.
+    \item \textbf{Council Members:} Have the right to cast exactly one (1) vote on internal Council business, officer appointments, and amendments to these bylaws.
+    \item A member loses voting rights upon loss of General Member status or for cause as determined through the disciplinary process in Section~7.
+\end{enumerate}
+
+\Sec{6. Data Privacy and Communication Autonomy}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Communication Autonomy:} The \orgshort{} shall maintain an independent communication channel (such as a university-hosted distribution list) to facilitate direct, uncensored dialogue with the General Membership.
+    \item \textbf{Data Stewardship:} To ensure compliance with Institute privacy regulations, membership contact lists shall be managed using Institute-approved platforms. The \orgshort{} shall not store sensitive student records on private, non-secure personal devices.
+    \item \textbf{Confidentiality:} Individual member data is confidential and shall not be shared with third parties without explicit consent.
+\end{enumerate}
+
+\Sec{7. Removal of Membership}
+\begin{enumerate}[label=\alph*)]
+    \item A member may be removed for failure to comply with these bylaws or department policy, violation of the Student Code of Conduct, or violation of RPI Handbook of Student Rights \& Responsibilities.
+    \item A member may be removed for failure to meet attendance requirements, defined as missing more than two (2) regularly scheduled meetings per semester without an excused absence.
+    \item \textbf{Process:} (i) A written complaint is submitted to the \orgshort{} Council Membership; (ii) removal requires a two-thirds (2/3) vote of Council Members present and voting; (iii) notice of decision and appeal options is provided in writing within five (5) business days.
+\end{enumerate}
+
+\Article{IV}{Elections}
+
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Timing:} Elections shall be held annually. The default timing is the first week of November, unless the Council votes to move it to some other time.
+    \item Elections shall retain the following process:
+    \begin{enumerate}[label=\roman*.]
+        \item The Graduate Program Administrator (or a Faculty Advisor designated by the Department Head) announces the election timeline at least two (2) weeks in advance
+        \item nominations open for one (1) week (self-nominations are permitted)
+        \item after verification of eligibility and acceptance of nominations, the Graduate Program Administrator prepares the ballot and shares it with General Members
+        \item voting occurs at a General Meeting or via secured online ballot open for 48 hours
+        \item simple majority elects
+        \item ties are resolved by a runoff election between tied candidates held within 48 hours of the initial result.
+    \end{enumerate}
+    \item Students shall take office immediately upon announcement of election results, at which time the term of office for previous members shall expire.
+    \item Any member who suspects unfair conduct shall notify the Graduate Program Administrator for further scrutiny.
+    \item Vacancies on the Council may be filled by appointment with the approval of two-thirds (2/3) vote of Council Members present and voting.
+\end{enumerate}
+
+\Article{V}{Officers}
+
+\Sec{1. Officers and Duties}
+
+\begin{enumerate}
+    \item The Officers of the \orgshort{} shall consist of a President, a Secretary, and at least two (2) additional officers.
+    
+    \item The President (Mandatory) shall:
+    \begin{enumerate}
+        \item Act as the primary spokesperson for the Council.
+        \item Represent the department at the RPI Graduate Council as a non-voting member.
+        \item Preside over all Council meetings, or appoint a President Pro Tempore to do so if unable to attend.
+        \item Set the agenda for Council meetings.
+    \end{enumerate}
+
+    \item The Secretary (Mandatory) shall:
+    \begin{enumerate}
+        \item Take minutes at all meetings and distribute them to Council members.
+        \item Maintain the official records and membership roster of the \orgshort{}.
+        \item Be responsible for advertising meetings and events of the Council.
+    \end{enumerate}
+
+    \item \textbf{Standard Roles for Reference} (The Council may elect members to these positions or define new ones as needed):
+    \begin{enumerate}
+        \item The Vice President shall act as President in their absence and coordinate operations not provided elsewhere.
+        \item The Events Coordinator shall plan social, professional, and wellness events and coordinate logistics.
+        \item The Publicity \& Communications Coordinator shall manage outreach (email, social media) and maintain the web presence.
+    \end{enumerate}
+\end{enumerate}
+
+\Sec{2. Eligibility for Office}
+\begin{enumerate}[label=\alph*)]
+    \item Only elected Council Members are eligible to serve as Officers.
+    \item No person may hold more than one Officer position concurrently.
+    \item If an officer cannot complete their term, they shall inform the Council immediately.
+\end{enumerate}
+
+\Sec{3. Election of Officers}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Timing:} Officer elections shall be held at the first meeting of the newly elected Council. This meeting must occur within two (2) weeks of the Council results announcement.
+    
+    \item \textbf{Presiding Officer:} The outgoing Council President shall call this meeting and preside until the new President is elected. If the outgoing President is unavailable, the Graduate Program Administrator may preside.
+
+    \item \textbf{Process:}
+    \begin{enumerate}[label=(\roman*)]
+        \item Nominations for President are taken from the floor (self-nominations are permitted).
+        \item Voting occurs via show of hands by the Council Members present.
+        \item A simple majority of the Council Members is required to elect.
+        \item Once elected, the new President immediately presides over the election of the Secretary and remaining officers.
+    \end{enumerate}
+
+    \item \textbf{Term:} Officers serve for the duration of their Council term (one year) or until their successors are elected.
+\end{enumerate}
+
+\Sec{4. Removal from Office}
+\begin{enumerate}[label=\alph*)]
+    \item An officer may be removed from their specific officer role (while retaining their Council seat) for failure to perform duties or violation of policies.
+    \item \textbf{Process:} (i) A motion to remove an officer must be made by a current Council Member; (ii) the motion must be discussed at a Council meeting with at least five (5) days' notice; (iii) removal requires a two-thirds (2/3) vote of Council Members present and voting.
+\end{enumerate}
+
+\Sec{5. Succession and Vacancies}
+\begin{enumerate}[label=\alph*)]
+    \item In the event of a vacancy in the office of the President, the Vice President (if one exists) shall become President. If no Vice President exists, the Council shall hold an internal election to fill the position.
+    \item Vacancies in other officer positions shall be filled by an internal election at the next Council meeting.
+    \item Resignations must be submitted in writing to the President. The resignation is effective immediately upon receipt.
+\end{enumerate}
+
+\Article{VI}{Meetings}
+
+\Sec{1. Council Meetings}
+\begin{enumerate}[label=\alph*)]
+    \item The \orgshort{} shall hold a minimum of two (2) Council Meetings each Fall and Spring semester.
+    \item \textbf{Procedure \& Quorum:} Meetings follow an agenda set by the President and distributed at least 24 hours in advance. Quorum for business is fifty percent (50\%) of Council Members. Proxy or electronic participation may count toward quorum if allowed by the President. Actions pass by simple majority unless otherwise specified.
+\end{enumerate}
+
+\Article{VII}{Policies, Standing Rules, and Bylaws}
+
+\Sec{1. Availability}
+\begin{enumerate}[label=\alph*)]
+    \item All policies, standing rules, and bylaws shall be available to any student of the department or interested member upon request and shall be published wherever these bylaws are published. These bylaws must be published on the \orgshort{} website, and on file with the \depname{} department administration.
+\end{enumerate}
+
+\Article{VIII}{Ratification and Amendments}
+
+\Sec{1. Supremacy Clause}
+If any part of these bylaws violates or contradicts the policies of Rensselaer, or applicable laws, the contradictory parts are invalid.
+
+\Sec{2. Ratification}
+\begin{enumerate}[label=\alph*)]
+    \item These bylaws shall be effective immediately upon ratification by a two-thirds (2/3) vote of all Council Members and subsequent approval of the \depname{} department administration.
+    \item Amendments require a two-thirds (2/3) vote of all Council Members at a Council Meeting (provided one week's notice of the amendment was given), and subsequent approval by the \depname{} department administration.
+\end{enumerate}
+
+\Sec{3. Supersession}
+Upon adoption, these bylaws supersede all previous governing documents relating to the \orgshort{} without disrupting officers currently serving terms validly elected under a prior set of bylaws.
+
+\end{document}
