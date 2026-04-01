@@ -1,0 +1,36 @@
+name: Compile LaTeX PDF
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "**/*.tex"
+      - "**/*.bib"
+      - "**/*.sty"
+      - ".github/workflows/compile.yml"
+      - ".github/workflows/release.yml"
+  pull_request:
+    paths:
+      - "**/*.tex"
+      - "**/*.bib"
+      - "**/*.sty"
+      - ".github/workflows/compile.yml"
+      - ".github/workflows/release.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-pdf-ci
+          path: main.pdf

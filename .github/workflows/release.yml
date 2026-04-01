@@ -1,0 +1,39 @@
+name: Release LaTeX PDF
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag (example: v0.1.0-test)"
+        required: true
+        default: "v0.1.0-test"
+      approval_record_url:
+        description: "Approval record URL (minutes, vote record, or approval issue)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+
+      - name: Create GitHub release and upload PDF
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.tag }}
+          name: Release ${{ inputs.tag }}
+          target_commitish: ${{ github.sha }}
+          generate_release_notes: true
+          body: |
+            Approval record: ${{ inputs.approval_record_url }}
+          files: |
+            main.pdf
