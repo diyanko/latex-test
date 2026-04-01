@@ -20,6 +20,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,3 +36,10 @@ jobs:
         with:
           name: latex-pdf-ci
           path: main.pdf
+
+      - name: Commit updated PDF to repository
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(pdf): update compiled main.pdf"
+          file_pattern: main.pdf
