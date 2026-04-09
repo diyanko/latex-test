@@ -2,6 +2,12 @@
 
 Use this checklist at every officer turnover. The goal is continuity, not ceremony.
 
+Before starting, make sure incoming officers have read:
+
+- `README.md`
+- `CONTRIBUTING.md`
+- `DECISIONS.md`
+
 ## 1. Access
 
 - [ ] Remove departing officers from write and admin teams.

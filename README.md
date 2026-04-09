@@ -1,122 +1,150 @@
 # Student Government Governance Docs Sample
 
-This repository is a presentation-ready sample of how a student government branch could manage bylaws, constitutions, or policies with GitHub and LaTeX.
+This repository is a simple example of how a student government branch could manage bylaws, constitutions, or policies with GitHub and LaTeX.
 
-The point of the sample is to show three things clearly:
+It is designed for people who may not know much about GitHub or LaTeX.
 
-1. What the repository looks like.
-2. How an official change moves from edit to approved release.
-3. How long-term continuity works when officers turn over.
+## Start Here
 
-## What To Show In The Demo
+If you only read three things, read these:
 
-When presenting this repository, the main GitHub views to point at are:
+1. This `README.md`
+2. `CONTRIBUTING.md`
+3. `TRANSITION.md`
 
-- `Code`: the current official source text in `main.tex` and the current public PDF in `main.pdf`
-- `Commits`: a permanent record of what changed, when, and why
-- `Actions`: automatic PDF builds on push and the separate manual release workflow
-- `Releases`: official ratified versions, each tied to an approval record
+## What This Repo Is Showing
 
-## Repository Layout
+This sample is meant to show:
 
-This sample intentionally keeps a flat layout so a new officer can understand it quickly.
+1. what the files in a document repository look like
+2. how someone makes a normal text change
+3. how an approved version becomes an official release
+4. how future officers can still understand the system
 
-- `main.tex`: the governing document source
-- `main.pdf`: the current compiled PDF for easy viewing
-- `DECISIONS.md`: the durable log of structural and workflow decisions
-- `TRANSITION.md`: the officer handoff checklist
-- `.github/workflows/compile.yml`: rebuilds `main.pdf` automatically
-- `.github/workflows/release.yml`: publishes official releases manually
+## The Main Idea
 
-The design rule is simple: do not create extra folders unless they solve a real problem. Past official versions live in Git history and GitHub Releases, not in `archive/` folders.
+- `main.tex` is the source text
+- `main.pdf` is the current easy-to-read PDF
+- GitHub keeps the full history of changes
+- GitHub Releases store official versions by date
 
-## Day-To-Day Workflow
+That is the whole system.
 
-Normal editing is intentionally lightweight:
+## What Each File Does
+
+- `main.tex`: the document text
+- `main.pdf`: the current compiled PDF
+- `CONTRIBUTING.md`: step-by-step instructions for making edits
+- `DECISIONS.md`: a log of important repository or drafting decisions
+- `TRANSITION.md`: the handoff checklist for new officers
+- `.github/workflows/compile.yml`: automatically rebuilds the PDF
+- `.github/workflows/release.yml`: creates an official release when run manually
+
+## If You Have Never Used LaTeX
+
+That is fine. Most officers should only need to do small text edits in `main.tex`.
+
+In this repository:
+
+- articles look like `\Article{I}{Name}`
+- sections look like `\Sec{1. Example}`
+- normal paragraph text is just normal text
+
+Most people should not need to touch the formatting commands at the top of `main.tex`.
+
+## If You Have Never Used GitHub
+
+The important GitHub tabs are:
+
+- `Code`: shows the files
+- `Commits`: shows the history of changes
+- `Actions`: shows automatic PDF builds and the manual release workflow
+- `Releases`: shows official dated versions
+
+If you are just editing text, the main thing to understand is this:
+
+- edit the file
+- save the change with a clear message
+- let GitHub rebuild the PDF
+
+## Normal Editing Workflow
+
+For ordinary edits:
 
 1. Edit `main.tex`.
-2. Commit with a message that explains the change and why it was made.
+2. Commit the change with a message that explains what changed.
 3. Push to `main`.
-4. Let GitHub Actions rebuild `main.pdf`.
-5. If the change reflects an approved decision, add a matching entry to `DECISIONS.md`.
+4. GitHub Actions rebuilds `main.pdf`.
+5. If needed, add a short matching note to `DECISIONS.md`.
 
-This keeps the current text easy to maintain while preserving a permanent history.
+For detailed editing instructions, see `CONTRIBUTING.md`.
 
 ## Official Release Workflow
 
-An official release happens only after the relevant body has approved the change.
+An official release should happen only after the document change has been approved.
 
-1. Record the approval in meeting minutes, a vote record, or another durable record.
+1. Record the approval in minutes, a vote record, or another durable source.
 2. Update `main.tex` to match the approved text.
-3. Add a short entry to `DECISIONS.md` with the approval link.
+3. Add a short entry to `DECISIONS.md` if the change affects policy, structure, or workflow.
 4. Push the change to `main`.
-5. Run the `Release LaTeX PDF` workflow manually from the approved commit.
-6. Enter the release metadata:
-   - `tag`
-   - `effective_date`
-   - `approval_record_url`
-   - `change_summary`
-7. GitHub creates the release and uploads a dated PDF asset.
+5. Run the `Release LaTeX PDF` workflow manually.
+6. Fill in the required release fields.
+7. GitHub creates the official release and uploads the dated PDF.
 
-This separation is deliberate:
+This keeps a clear separation between:
 
-- push builds a preview/current PDF
-- manual release marks an official ratified version
+- the current working text
+- the officially adopted versions
 
-## Naming Scheme
+## Release Naming Scheme
 
-This sample uses a date-based release scheme because it is easier for future officers to understand than software version numbers.
+This sample uses dates because dates are easier to understand than software version numbers.
 
 - Tag: `YYYY-MM-DD`
-- If two official versions are released on the same date: `YYYY-MM-DD.1`, `YYYY-MM-DD.2`
+- If there is more than one official release on the same date: `YYYY-MM-DD.1`, `YYYY-MM-DD.2`
 - Release title: `Bylaws effective YYYY-MM-DD`
-- PDF asset: `bylaws-YYYY-MM-DD.pdf`
+- PDF filename: `bylaws-YYYY-MM-DD.pdf`
 
 Examples:
 
-- `2026-04-09`
+- `2026-09-15`
 - `2026-11-19`
-- `2026-11-19.1`
-
-The tag identifies the official version. The release title is what humans read. The asset filename makes exported PDFs easy to archive outside GitHub.
+- `2027-02-01`
 
 ## Sample Release Trail In This Repo
 
-This repository now contains a small sample amendment history so you can demonstrate how official versions evolve over time.
+This sample repo includes a small fake history so you can show people how diffs and releases work.
 
 - `2026-09-15`: fuller amendment-summary requirement
 - `2026-11-19`: emergency meeting notice rule
 - `2027-02-01`: stronger records-retention rule
 
-Useful demo path:
+Useful demo flow:
 
-1. Open `Releases` and click a dated release.
-2. Open `Commits` to show the amendment commit that produced it.
-3. Use GitHub's compare view between two tags to show the exact diff from one official version to the next.
+1. Open `Releases` and click one of the dated releases.
+2. Open the matching commit.
+3. Use GitHub compare between two tags to show the exact changes.
 
 Example compare ranges:
 
 - `2026-09-15...2026-11-19`
 - `2026-11-19...2027-02-01`
 
-## What Counts As The Official Text
+## What Counts As Official
 
-- `main` holds the current working official text.
-- `main.pdf` is the current convenience copy.
-- Git tags and GitHub Releases mark official historical snapshots.
-- `DECISIONS.md` explains why important workflow or drafting decisions were made.
+- `main.tex` is the current source text
+- `main.pdf` is the current convenience PDF
+- Git tags and GitHub Releases are the official historical snapshots
 
-If someone needs to know what the bylaws said on a specific date, use the relevant release or tag.
+If someone asks what the bylaws said on a certain date, look at the release or tag for that date.
 
-## Backup And Continuity Rules
+## Continuity Rules
 
-- Keep at least two people with admin access to the org.
-- Keep at least two independent backup copies or a mirror.
-- Make every official release cite an approval record.
-- Archive official release PDFs outside GitHub as a last-resort backup.
+- Keep at least two people with admin access
+- Keep at least two independent backups or one working mirror
+- Make every official release link to its approval record
+- Archive official PDFs outside GitHub as a last-resort backup
 
-## Notes About This Repository
+## Notes
 
-This is a sample repository for demonstration, not the final policy text you will present. The substantive proposal can live in Notion; this repository shows how the system behaves in practice once adopted.
-
-To make the demo easier to present, the repository also includes a small sample amendment history with real commits and dated tags so viewers can inspect how diffs and official versions would look over time.
+This is a sample repository for demonstration. The proposal text itself can live in Notion. This repository shows how the system would work in practice after adoption.
