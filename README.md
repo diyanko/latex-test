@@ -80,6 +80,25 @@ Examples:
 
 The tag identifies the official version. The release title is what humans read. The asset filename makes exported PDFs easy to archive outside GitHub.
 
+## Sample Release Trail In This Repo
+
+This repository now contains a small sample amendment history so you can demonstrate how official versions evolve over time.
+
+- `2026-09-15`: fuller amendment-summary requirement
+- `2026-11-19`: emergency meeting notice rule
+- `2027-02-01`: stronger records-retention rule
+
+Useful demo path:
+
+1. Open `Releases` and click a dated release.
+2. Open `Commits` to show the amendment commit that produced it.
+3. Use GitHub's compare view between two tags to show the exact diff from one official version to the next.
+
+Example compare ranges:
+
+- `2026-09-15...2026-11-19`
+- `2026-11-19...2027-02-01`
+
 ## What Counts As The Official Text
 
 - `main` holds the current working official text.
