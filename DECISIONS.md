@@ -53,3 +53,10 @@ The entries below are sample entries for demonstration.
 - Decision: Allow emergency meetings with twenty-four hours' notice for time-sensitive business, but restrict those meetings to the urgent item named in the notice.
 - Why: The council occasionally needs a faster process for narrow urgent actions, but the exception should stay limited so regular notice rules are not undermined.
 - Reference: `https://example.org/minutes/2026-11-19-emergency-meeting-rule`
+
+## 2027-02-01
+
+- Deciding body: Sample Council Meeting
+- Decision: Expand the records-retention rule to explicitly include tagged official releases and archived PDFs for at least seven years.
+- Why: Continuity depends on preserving not just the current text, but also the officially adopted versions that students, advisors, and future officers may need to reference.
+- Reference: `https://example.org/minutes/2027-02-01-records-retention-update`
