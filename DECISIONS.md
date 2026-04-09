@@ -46,3 +46,10 @@ The entries below are sample entries for demonstration.
 - Decision: Require amendment summaries to identify the affected articles or sections, include the effective date, and be published within seven calendar days.
 - Why: Amendment summaries are much more useful when readers can quickly see what changed and when the change took effect.
 - Reference: `https://example.org/minutes/2026-09-15-amendment-summary-requirement`
+
+## 2026-11-19
+
+- Deciding body: Sample Council Meeting
+- Decision: Allow emergency meetings with twenty-four hours' notice for time-sensitive business, but restrict those meetings to the urgent item named in the notice.
+- Why: The council occasionally needs a faster process for narrow urgent actions, but the exception should stay limited so regular notice rules are not undermined.
+- Reference: `https://example.org/minutes/2026-11-19-emergency-meeting-rule`
