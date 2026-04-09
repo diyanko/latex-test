@@ -34,7 +34,7 @@ jobs:
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
-          name: latex-pdf-ci
+          name: bylaws-preview-pdf
           path: main.pdf
 
       - name: Commit updated PDF to repository

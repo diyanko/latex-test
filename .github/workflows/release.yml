@@ -4,12 +4,20 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: "Release tag (example: v0.1.0-test)"
+        description: "Release tag (use YYYY-MM-DD or YYYY-MM-DD.1)"
         required: true
-        default: "v0.1.0-test"
+        default: "2026-04-09"
+      effective_date:
+        description: "Effective date shown in the release title and PDF asset name"
+        required: true
+        default: "2026-04-09"
       approval_record_url:
         description: "Approval record URL (minutes, vote record, or approval issue)"
         required: true
+      change_summary:
+        description: "Short summary of what this official version changed"
+        required: true
+        default: "Sample ratified release for repository demonstration."
 
 permissions:
   contents: write
@@ -26,14 +34,20 @@ jobs:
         with:
           root_file: main.tex
 
+      - name: Prepare dated release asset
+        run: cp main.pdf "bylaws-${{ inputs.effective_date }}.pdf"
+
       - name: Create GitHub release and upload PDF
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ inputs.tag }}
-          name: Release ${{ inputs.tag }}
+          name: Bylaws effective ${{ inputs.effective_date }}
           target_commitish: ${{ github.sha }}
-          generate_release_notes: true
           body: |
+            Official ratified version.
+
+            Effective date: ${{ inputs.effective_date }}
             Approval record: ${{ inputs.approval_record_url }}
+            Summary: ${{ inputs.change_summary }}
           files: |
-            main.pdf
+            bylaws-${{ inputs.effective_date }}.pdf
