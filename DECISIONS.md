@@ -39,3 +39,10 @@ The entries below are sample entries for demonstration.
 - Decision: Require every official release to include a link to the approval record in the release notes.
 - Why: A governing document should always be traceable back to the vote, meeting, or written approval that authorized it.
 - Reference: `https://example.org/minutes/2026-04-01-approval-link-requirement`
+
+## 2026-09-15
+
+- Deciding body: Sample Council Meeting
+- Decision: Require amendment summaries to identify the affected articles or sections, include the effective date, and be published within seven calendar days.
+- Why: Amendment summaries are much more useful when readers can quickly see what changed and when the change took effect.
+- Reference: `https://example.org/minutes/2026-09-15-amendment-summary-requirement`
